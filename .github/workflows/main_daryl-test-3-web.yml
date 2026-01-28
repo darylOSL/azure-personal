@@ -52,4 +52,4 @@ jobs:
           app-name: 'daryl-test-3-web'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B2B55B8B61E744FDA8DC2542B50DA8B6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_08214043271D4BA4A6919A25A93DF11E }}
