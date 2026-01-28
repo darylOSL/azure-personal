@@ -28,6 +28,12 @@ jobs:
       run: |
         cd frontend
         npm install
+        # Verify react-scripts is installed
+        if [ ! -f "node_modules/.bin/react-scripts" ]; then
+          echo "ERROR: react-scripts not found after npm install"
+          npm list react-scripts
+          exit 1
+        fi
 
     - name: Build frontend
       run: |
