@@ -8,27 +8,27 @@ function App() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  const API_URL = 'http://localhost:3001';
 
   useEffect(() => {
     // Check backend health
-    fetch(`${apiUrl}/api/health`)
+    fetch(`${API_URL}/api/health`)
       .then(res => res.json())
       .then(data => setHealth(data))
       .catch(err => console.error('Health check failed:', err));
 
     // Fetch data
-    fetch(`${apiUrl}/api/data`)
+    fetch(`${API_URL}/api/data`)
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.error('Data fetch failed:', err));
-  }, [apiUrl]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`${apiUrl}/api/message`, {
+      const res = await fetch(`${API_URL}/api/message`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,8 +49,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Azure App Service Test App</h1>
-        <p>Frontend + Backend Deployment Test</p>
+        <h1>Azure Test App</h1>
+        <p>Frontend + Backend</p>
       </header>
 
       <main className="App-main">
