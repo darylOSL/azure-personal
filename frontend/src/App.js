@@ -8,7 +8,8 @@ function App() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = 'http://localhost:3001';
+  // const API_URL = 'http://localhost:3001';
+  const API_URL = process.env.REACT_APP_API_URL || '';
 
   useEffect(() => {
     // Check backend health
